@@ -8,6 +8,8 @@ mod dummy_db;
 
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {
+    println!("Starting...");
+
     let app_state = web::Data::new(User {
         id: 0,
         name: "App State".to_string(),
@@ -22,10 +24,16 @@ async fn main() -> std::io::Result<()> {
     })
     .bind("127.0.0.1:8080")?
     .run()
-    .await
+    .await?;
+
+    println!("Server started on 127.0.0.1:8080");
+    Ok(())
 }
 
 // Updated get_users function to accept app_state and return User
 async fn get_users() -> impl Responder {
-    web::Json(get_random_user()) // Return the User in JSON format
+    println!("GET request received for /users");
+    let user = get_random_user();
+    println!("Answering with {:?}", user);
+    web::Json(user) // Return the User in JSON format
 }
