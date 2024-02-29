@@ -12,6 +12,16 @@ pub struct User {
 
 impl User {
     /// Returns a new `User` instance with the given ID, name, and email.
+    ///
+    /// # Arguments
+    ///
+    /// * `id` - The ID of the user.
+    /// * `name` - The name of the user.
+    /// * `email` - The email of the user.
+    ///
+    /// # Example
+    /// let user = User::new(1, "John Doe", "john.doe@example.com");
+    ///
     #[allow(dead_code)]
     pub fn new(id: i32, name: &str, email: &str) -> User {
         User {

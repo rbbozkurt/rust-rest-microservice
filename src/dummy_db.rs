@@ -1,5 +1,6 @@
 use crate::dummy_data::User;
-use rand::Rng; // Add this line to import the `Rng` trait from the `rand` crate
+use rand::Rng;
+
 /// Returns a vector of dummy users.
 fn get_users() -> Vec<User> {
     vec![
@@ -28,6 +29,6 @@ pub fn get_user_by_id(id: i32) -> Option<User> {
 
 pub fn get_random_user() -> User {
     let users = get_users();
-    let random_index = rand::thread_rng().gen_range(0..users.len()); // Fix the random index generation
+    let random_index = rand::thread_rng().gen_range(0..users.len());
     users[random_index].clone()
 }
