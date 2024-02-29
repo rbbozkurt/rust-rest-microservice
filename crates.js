@@ -1,1 +1,1 @@
-window.ALL_CRATES = ["rust_project_template"];
+window.ALL_CRATES = ["rust_rest_microservice"];

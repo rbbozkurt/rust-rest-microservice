@@ -1,4 +1,4 @@
 var srcIndex = new Map(JSON.parse('[\
-["rust_project_template",["",[],["main.rs"]]]\
+["rust_rest_microservice",["",[],["dummy_data.rs","dummy_db.rs","main.rs"]]]\
 ]'));
 createSrcSidebar();
