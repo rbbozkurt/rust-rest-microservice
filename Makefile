@@ -27,6 +27,7 @@ test: ## Run the tests
 	cargo test --quiet
 
 run: ## Run the binary
+	lsof -ti:8080 | xargs kill -9
 	cargo run
 
 release: ## Build the release version
