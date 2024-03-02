@@ -1,4 +1,4 @@
-# < Rust REST Microservice Example>
+# Rust REST Microservice Example
 
 This README.md template is intended to serve as base for your repository. 
 
