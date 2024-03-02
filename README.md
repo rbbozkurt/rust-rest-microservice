@@ -1,8 +1,8 @@
-# < Actual Repo Name >
+# < Rust REST Microservice Example>
 
 This README.md template is intended to serve as base for your repository. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut ornare ipsum. Aenean aliquet fermentum aliquet. Quisque ac auctor lectus. Aliquam ac libero nulla. Proin ligula eros, posuere ac libero id, posuere rhoncus justo. Mauris dignissim est lacus, quis dignissim leo ultrices eu. Sed pretium pretium suscipit. In ut auctor neque, vitae scelerisque ligula. Cras aliquet nunc id molestie aliquam. Nam egestas libero hendrerit auctor efficitur. Suspendisse aliquet erat et nisi maximus molestie. Duis ex felis, rutrum ut tellus rhoncus, tempus dapibus metus. 
+This project is a Rust-based REST microservice that demonstrates handling user data using Actix-web. It features a dummy database ```(dummy_db.rs)``` for simulating user data operations and showcases how to retrieve specific and random user entries. The project is structured to promote best practices in Rust development, including modularity, testing, and efficient error handling.
 
 ## Table of Contents
 
@@ -29,25 +29,33 @@ Before installing, ensure you have the following tools installed:
 To set up the project on your local machine, follow these steps:
 
 ```bash
-git clone https://github.com/<your_repo>
-cd <your_repo>
-git checkout -b <your_branch_name>
+git clone https://github.com/rbbozkurt/rust-rest-microservice
+cd rust_rest_microservice
 ./setup.sh
 ```
 ## Usage
 
-To view all available commands and their descriptions, run:
+To start the server, run:
 
 ```bash
-make help
+make run
+```
+Once the server is running, you can access the ```/users``` endpoint to retrieve a random user:
+
+```bash
+curl http://localhost:8080/users
 ```
 
 ## Features
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut ornare ipsum. Aenean aliquet fermentum aliquet. Quisque ac auctor lectus. Aliquam ac libero nulla. Proin ligula eros, posuere ac libero id, posuere rhoncus justo. Mauris dignissim est lacus, quis dignissim leo ultrices eu. Sed pretium pretium suscipit. In ut auctor neque, vitae scelerisque ligula. Cras aliquet nunc id molestie aliquam. Nam egestas libero hendrerit auctor efficitur. Suspendisse aliquet erat et nisi maximus molestie. Duis ex felis, rutrum ut tellus rhoncus, tempus dapibus metus. 
+- **User Data Management:** Simulate user data retrieval from a dummy database.
+- **Random User Retrieval:** Endpoint to fetch a random user's details.
+- **Specific User Retrieval:** Functionality to fetch details of a user by ID (demonstrated in tests).
+- **Actix-web Framework:** Utilizes the Actix-web framework for robust and efficient web server capabilities.
+- **Modular Design:** Code is organized into modules (dummy_data and dummy_db) for clarity and maintainability.
 
 ## Contributing
 
-Contributions to the < repo name > are welcome! Here's how you can contribute:
+Contributions to the rust-rest-microservice are welcome! Here's how you can contribute:
 
 * Bug Reports: Notice a bug? Open an issue with a clear title and description.
 * Feature Requests: Have an idea for an improvement? I'd love to hear it. Open an issue to suggest new features.
