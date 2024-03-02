@@ -32,3 +32,29 @@ pub fn get_random_user() -> User {
     let random_index = rand::thread_rng().gen_range(0..users.len());
     users[random_index].clone()
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_get_user_by_id() {
+        let user = get_user_by_id(2);
+        assert_eq!(user.unwrap().name, "Jane Doe");
+    }
+
+    #[test]
+    fn test_get_random_user() {
+        let user = get_random_user();
+        assert!(user.id >= 1 && user.id <= 3);
+    }
+
+    #[test]
+    fn test_get_users() {
+        let users = get_users();
+        assert_eq!(users.len(), 3);
+        assert_eq!(users[0].name, "John Doe");
+        assert_eq!(users[1].name, "Jane Doe");
+        assert_eq!(users[2].name, "John Smith");
+    }
+}

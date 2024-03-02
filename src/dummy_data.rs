@@ -31,3 +31,33 @@ impl User {
         }
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn test_user_new() {
+        let name = "John Doe".to_string();
+        let email = "johndoe@github.com".to_string();
+        let id = 1;
+        let user = User::new(id, &name, &email);
+
+        assert!(id == user.id);
+        assert!(name == user.name);
+        assert!(email == user.email);
+    }
+
+    #[test]
+    fn test_user_clone() {
+        let name = "John Doe".to_string();
+        let email = "johndoe@github.com".to_string();
+        let id = 1;
+        let user = User::new(id, &name, &email);
+        let cloned_user = user.clone();
+
+        assert!(id == cloned_user.id);
+        assert!(name == cloned_user.name);
+        assert!(email == cloned_user.email);
+    }
+}
